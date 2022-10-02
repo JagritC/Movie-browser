@@ -2,15 +2,18 @@
   <div class="container">
     <div class="row">
       <div class="col-mid-4">
-        <h3>Movie Database Browser</h3>
+        <h3 class="app-clickable" [routerLink]="['/home']">
+          Movie Database Browser
+        </h3>
       </div>
       <div class="col-md-8">
-        <form>
+        <form (submit)="submitHandler($event)">
           <input
             type="text"
             class="form-control"
             name="queryTerm"
             autofocus
+            [(ngModel)]="queryTerm"
             placeholder="search movies..."
           />
         </form>
